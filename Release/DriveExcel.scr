@@ -1,0 +1,33 @@
+Option Explicit
+
+Sub main()
+
+	Dim objXLS
+	Set objXLS=Document.OpenDocumentFile("DriveExcel.xls")
+	
+	Dim objSheet
+	Set objSheet=objXLS.ActiveSheet
+
+	objSheet.Name="Market Share"
+	objSheet.Range("A2").Value = "Company A"
+	objSheet.Range("B2").Value = "Company B"
+	objSheet.Range("C2").Value = "Company C"
+	objSheet.Range("D2").Value = "Company D"
+
+	objSheet.Range("A3").Value = 75.0
+	objSheet.Range("B3").Value = 14.0
+	objSheet.Range("C3").Value = 7.0
+	objSheet.Range("D3").Value = 4.0
+
+
+	Dim objRange    
+	Set objRange  = objSheet.Range("A2:D3")
+
+	Dim objChart
+	Set objChart=objXLS.Charts.Add()
+    
+	objChart.ChartWizard objRange,-4102, 7, 1,1, 0, 2, "Market Share"
+
+	objXLS.Visible=True
+
+End Sub

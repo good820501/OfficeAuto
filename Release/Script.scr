@@ -1,0 +1,14 @@
+Sub main()
+
+	'Uses type library of: Word.Document
+	
+	Dim objWordDoc
+	Set objWordDoc=CreateObject("Word.Document")
+	
+	Dim objSelection
+	Set objSelection=objWordDoc.ActiveWindow.Selection
+	objWordDoc.Tables.Add objSelection.Range, 1, 4
+	
+	objSelection.TypeText "Andrew"
+	
+End Sub

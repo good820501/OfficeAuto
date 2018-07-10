@@ -1,0 +1,70 @@
+// AXDocContainer.odl : type library source for AXDocContainer.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (AXDocContainer.tlb).
+
+[ uuid(3533A5C4-D3DF-11D1-8F0B-F54176DCF130), version(1.0) ]
+library AXDocContainer
+{
+	importlib("stdole32.tlb");
+	
+
+	//  Primary dispatch interface for CAXDocContainerDoc
+	
+	[ uuid(3533A5C5-D3DF-11D1-8F0B-F54176DCF130) ]
+	dispinterface IAXDocContainer
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAXDocContainerDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAXDocContainerDoc)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAXDocContainerDoc
+	
+	[ uuid(3533A5C3-D3DF-11D1-8F0B-F54176DCF130) ]
+	coclass Document
+	{
+		[default] dispinterface IAXDocContainer;
+	};
+
+
+	//  Primary dispatch interface for CScriptDocument
+	
+	[ uuid(18990D61-3474-11D2-8F0B-F54176DCF130) ]
+	dispinterface IScriptDocument
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CScriptDocument)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CScriptDocument)
+			[id(1)] IDispatch* OpenDocumentFile(BSTR strFileName);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CScriptDocument
+
+	[ uuid(18990D63-3474-11D2-8F0B-F54176DCF130) ]
+	coclass ScriptDocument
+	{
+		[default] dispinterface IScriptDocument;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
